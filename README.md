@@ -206,3 +206,61 @@ A northbound private-hire car, travelling at 45 km/h, is 95 metres away. Its OBU
 By the time the signal turns green for pedestrians and Sarah steps off the kerb, the TTC has dropped to 3.8 seconds, crossing the HIGH alert threshold. The driver has already slowed to 20 km/h and stops well before the crossing. No collision occurs. The interaction lasts under 8 seconds and required no internet connectivity, no RSU, and no action beyond Sarah's normal use of the crossing button.
 
 
+## 3. AI Usage and Individual Reflection
+
+### 3.1 AI Tools Used
+
+| Tool | Phases Used | Purpose |
+|---|---|---|
+| Claude (Anthropic) | All phases | Architecture reasoning, BSM payload design, decision log drafting, simulation pseudocode, literature search |
+| ChatGPT 4o | Research phase | Cross-reference on 3GPP V2X standards and BLE power consumption |
+| GitHub Copilot | Simulation coding | Autocomplete for Python haversine function and BSM serialisation |
+
+
+### 3.2 Example Prompts and Generated Outputs
+
+**Prompt 1 (Architecture design):**
+> *"We are building a V2P system where a pedestrian's smartphone alerts nearby vehicles via BLE. The vehicle has a BLE receiver. Design the system architecture including all subsystems, message format, and key parameters such as range and latency."*
+
+**Output summary:** Claude produced a structured breakdown of three subsystems (pedestrian app, wireless channel, vehicle OBU), a BSM field table, and latency estimates (~80 ms end-to-end for BLE). The architecture closely matched what we adopted, though we added the intent_flag field and two-tier alert logic ourselves after reviewing driver reaction time literature.
+
+
+*Prompt 2 (BSM payload):**
+> *"Design a compact BSM packet for BLE advertisement that fits in 31 bytes and carries GPS position, speed, heading, and a crossing intent flag. Show field names, data types, and byte sizes."*
+**Output summary:** Claude proposed a 26-byte packet. We reduced it to 23 bytes by removing a redundant checksum field (BLE handles integrity at link layer) and compressing the accuracy 
+field from uint16 to uint8. This demonstrates the need for human engineering review of AI-generated specifications.
+
+
+**Prompt 3 (Risk engine pseudocode):**
+> *"Write pseudocode for a vehicle on-board unit that receives BSMs from pedestrians, computes time-to-collision, and triggers a two-tier driver alert (CAUTION and HIGH). Use haversine for distance."*
+
+**Output summary:** Claude generated correct pseudocode structure. However, it initialised TTC as `d / v_rel` without guarding against `v_rel ≤ 0` (vehicles moving away from pedestrian). We added the `IF v_rel > 0 ELSE INFINITY` guard to prevent division by zero, which would have been a critical runtime bug.
+
+
+### 3.3 Identified AI Weaknesses / Hallucinations
+
+**Weakness 1 — Incorrect latency for BLE advertising:**
+Claude initially stated BLE advertising latency as "approximately 10–20 ms". After checking Nordic Semiconductor's power profiler documentation and published measurements, actual typical latency is 40–80 ms at standard advertising intervals. We updated all tables accordingly. The AI underestimated latency by approximately 2–4×, which would have affected our TTC threshold calculations.
+
+**Weakness 2 — Incorrect Singapore spectrum allocation:**
+Claude stated that "Singapore has not yet allocated 5.9 GHz for V2X". A check of the IMDA website confirmed that Singapore has indeed designated the 5.9 GHz band for Intelligent Transport Systems (ITS), consistent with international harmonisation. This hallucination would have led us to incorrectly exclude C-V2X from our architecture.
+
+**Weakness 3 — Pseudonym change interval:**
+Claude suggested a pseudonym rotation interval of "every 60 seconds" for privacy. The SAE J2945/1 standard specifies a change interval of "not more than 5 minutes with event-driven changes". We aligned our implementation to the standard rather than the AI's suggestion, which would have caused unnecessary frequent re-identification disruptions in practice.
+
+
+### 3.4 Individual Reflections
+**[Member 1 — Joseph]**
+My primary contribution was defining the overall system architecture. I found AI tools most useful for quickly generating a first draft of the BSM field table and the risk engine pseudocode, which gave us a concrete starting point to critique and improve. The most important lesson was that AI tends to present outputs with false confidence — the BLE latency and spectrum allocation errors could have gone unnoticed without independent verification. In future projects, I would treat AI outputs as a first draft requiring engineering validation rather than a final answer.
+
+**[Member 2 — ]**
+
+**[Member 3 —]**
+
+**[Member 4 — ]**
+
+**[Member 5 — ]**
+
+
+
+
