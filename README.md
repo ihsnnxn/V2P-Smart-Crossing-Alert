@@ -215,7 +215,7 @@ START
 
 <div align="center">
 
-mermaid
+
 gantt
     title BLE Path Latency Budget
     dateFormat ss.SSS
