@@ -17,21 +17,6 @@
 | **11** | 2026-02-27 | **Slow crossing behaviour** — no explicit handling for users who take longer to cross | **A.** Keep fixed alert timing<br/>**B.** Extend alert while in crossing zone<br/>**C.** Add per-user-type thresholds | Safety effectiveness, implementation simplicity, driver understanding | ✅ **Extended alert while in crossing zone.** Option 1 ends warnings too early for slower users. Option 3 adds unnecessary complexity. Simple extension preserves existing TTC/distance logic while improving safety for elderly and wheelchair users. | ChatGPT-5 used to compare handling strategies; decision aligned with existing two-tier alert system without over-engineering. | <span style="color:#f97316">Daniel</span> |
 | **12** | 2026-02-28 | **Hidden pedestrian visibility** — system needed clarity on handling non-line-of-sight scenarios | **A.** Trigger only when visible/entering road<br/>**B.** Allow smartphone signalling before line-of-sight<br/>**C.** Require RSU infrastructure | Early warning value, feasibility, cost, concept alignment | ✅ **Allow pre-line-of-sight warnings.** Option 1 removes core V2P benefit. Option 3 contradicts infrastructure-free base design. Smartphone-originated warnings for hidden pedestrians most consistent with project concept. | ChatGPT-5 used to explore hidden-pedestrian risk scenarios; final decision manually aligned with existing architecture. | <span style="color:#f97316">Daniel</span> |
 
-</div>
-
----
-
-## 🎨 Team Member Color Legend
-
-| Member | Color |
-|:-------|:-----:|
-| **Joseph** | <span style="color:#ff6b6b">🔴 Red</span> |
-| **Belle** | <span style="color:#4ecdc4">🟢 Teal</span> |
-| **Ihsan** | <span style="color:#3b82f6">🔵 Blue</span> |
-| **Daniel** | <span style="color:#f97316">🟠 Orange</span> |
-
----
-
 
 # Decision Log
 
