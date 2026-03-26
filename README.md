@@ -87,8 +87,8 @@ graph TB
     end
     
     subgraph WIRELESS_CHANNEL [📶 WIRELESS CHANNEL]
-        E[BLE 5.0<br/>~100m | 40-80ms]
-        F[C-V2X PC5<br/>~300m | 20-50ms]
+        E["BLE 5.0<br/>~100m | 40-80ms"]
+        F["C-V2X PC5<br/>~300m | 20-50ms"]
         G[🔄 Optional RSU Relay]
     end
     
@@ -108,9 +108,9 @@ graph TB
     D --> G
     E --> H
     F --> H
-    G --> H 
-   
-```
+    G --> H
+
+```    
 
 **Key design decisions:**
 - Pedestrian app runs in foreground or background service; triggers geofence check every 1 second via GPS.
