@@ -10,9 +10,6 @@
 [![BLE](https://img.shields.io/badge/BLE-5.0+-blue)]()
 [![C-V2X](https://img.shields.io/badge/C--V2X-3GPP%20Release%2014-green)]()
 
-<img width="934" height="853" alt="image" src="https://github.com/user-attachments/assets/dedd69fb-6b66-4fc5-a773-4620341aceab" />
-
-
 </div>
 
 ---
