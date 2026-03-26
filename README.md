@@ -53,14 +53,14 @@ Our system differs from prior work in three ways: (1) it combines BLE as a prima
 The system is divided into three subsystems: the **Pedestrian Subsystem** (smartphone app), the **Wireless Channel** (BLE / C-V2X / optional RSU), and the **Vehicle Subsystem** (OBU + HMI).
 
 ┌─────────────────────────────┐      Wireless     ┌──────────────────────────────┐
-│     PEDESTRIAN SUBSYSTEM    │      Channel      │      VEHICLE SUBSYSTEM        │
-│                             │                   │                               │
+│     PEDESTRIAN SUBSYSTEM    │      Channel      │      VEHICLE SUBSYSTEM       │
+│                             │                   │                              │
 │  ┌─────────────────────┐    │  BLE (~100 m)     │  ┌──────────────────────┐    │
 │  │   Smartphone App    │────┼──────────────────►│  │   OBU Receiver       │    │
 │  │  GPS + BLE/C-V2X    │    │  C-V2X (~300 m)   │  │  BLE / C-V2X radio   │    │
 │  └────────┬────────────┘    │                   │  └──────────┬───────────┘    │
-│           │                 │  [RSU relay]       │             │                │
-│  ┌────────▼────────────┐    │  optional          │  ┌──────────▼───────────┐    │
+│           │                 │  [RSU relay]      │             │                │
+│  ┌────────▼────────────┐    │  optional         │  ┌──────────▼───────────┐    │
 │  │  Geofence Detector  │    │                   │  │   Message Parser     │    │
 │  │  <50 m from node    │    │                   │  │  Decode BSM payload  │    │
 │  └────────┬────────────┘    │                   │  └──────────┬───────────┘    │
@@ -76,7 +76,8 @@ The system is divided into three subsystems: the **Pedestrian Subsystem** (smart
 │  └─────────────────────┘    │                   │  └──────────────────────┘    │
 └─────────────────────────────┘                   └──────────────────────────────┘
 
-<img width="849" height="641" alt="image" src="https://github.com/user-attachments/assets/19efdaab-a755-4da9-a300-8dc73efcd9e6" />
+<img width="788" height="636" alt="image" src="https://github.com/user-attachments/assets/671a6a75-8171-4075-a195-4ed56901b3d6" />
+
 
 
 **Key design decisions:**
