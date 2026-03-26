@@ -26,7 +26,6 @@
 | [📝 Decision Log](#-decision-log) | Chronological design evolution |
 | [🤖 AI Usage](#-ai-usage-and-individual-reflection) | Generative AI contributions |
 
-# V2P-Smart-Crossing-Alert
 
 Project Idea
 :
