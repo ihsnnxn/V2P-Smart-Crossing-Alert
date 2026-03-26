@@ -156,6 +156,27 @@ START
 
 ### 1.4 Hardware Components and Parameters
 
+<div align="center">
+
+| 🧩 **Component** | 📋 **Specification** | 📊 **Parameter** | ⚡ **Value** |
+|:-----------------|:---------------------|:-----------------|:------------|
+| **📱 Pedestrian Smartphone** | BLE 5.0+ / 5G handset | GPS accuracy | ±3–5 m |
+| | | Update rate | 1 Hz / 10 Hz |
+| | | Battery impact | ~3-5%/hour |
+| **🔵 BLE Radio** | BLE 5.0 advertising | Max TX power | +20 dBm |
+| | | Effective range | ~100 m (open road) |
+| | | Data rate | 1 Mbps |
+| | | Latency | 40-80 ms |
+| **📡 C-V2X Module** | Qualcomm 9150 | Frequency | 5.9 GHz |
+| | | Effective range | ~300 m |
+| | | Latency | 20-50 ms |
+| | | Bandwidth | 10 MHz |
+| **🚗 Vehicle OBU** | Aftermarket gateway | Processing latency | 5-10 ms |
+| | | Update rate | up to 10 Hz |
+| **📊 HMI Display** | Head unit / tablet | Alert display time | ≤ 500 ms |
+| **🔄 End-to-End** | BLE path | Total latency | 80-100 ms |
+| | C-V2X path | Total latency | 30-60 ms |
+
 | Component | Specification | Parameter | Value |
 |---|---|---|---|
 | Pedestrian smartphone | Any BLE 5.0+ / 5G handset (e.g., iPhone 14, Samsung S22) | GPS accuracy | ±3–5 m (good sky view) |
@@ -187,54 +208,6 @@ START
 | Risk evaluation | ~3 ms |
 | HMI render | ~5 ms |
 | **Total** | **~40–65 ms typical, <100 ms worst case** |
-
-
-<div align="center">
-
-| 🧩 **Component** | 📋 **Specification** | 📊 **Parameter** | ⚡ **Value** |
-|:-----------------|:---------------------|:-----------------|:------------|
-| **📱 Pedestrian Smartphone** | BLE 5.0+ / 5G handset | GPS accuracy | ±3–5 m |
-| | | Update rate | 1 Hz / 10 Hz |
-| | | Battery impact | ~3-5%/hour |
-| **🔵 BLE Radio** | BLE 5.0 advertising | Max TX power | +20 dBm |
-| | | Effective range | ~100 m (open road) |
-| | | Data rate | 1 Mbps |
-| | | Latency | 40-80 ms |
-| **📡 C-V2X Module** | Qualcomm 9150 | Frequency | 5.9 GHz |
-| | | Effective range | ~300 m |
-| | | Latency | 20-50 ms |
-| | | Bandwidth | 10 MHz |
-| **🚗 Vehicle OBU** | Aftermarket gateway | Processing latency | 5-10 ms |
-| | | Update rate | up to 10 Hz |
-| **📊 HMI Display** | Head unit / tablet | Alert display time | ≤ 500 ms |
-| **🔄 End-to-End** | BLE path | Total latency | 80-100 ms |
-| | C-V2X path | Total latency | 30-60 ms |
-
-
-#### ⏱️ Latency Budget Breakdown (BLE Path)
-
-<div align="center">
-
-
-gantt
-    title BLE Path Latency Budget
-    dateFormat ss.SSS
-    axisFormat %S.%L
-    
-    section Processing
-    GPS polling + geofence :00.000, 5ms
-    BSM construction :00.005, 2ms
-    
-    section Transmission
-    BLE advertising :00.007, 40ms
-    
-    section Reception
-    OBU receive + parse :00.047, 10ms
-    Risk evaluation :00.057, 3ms
-    HMI render :00.060, 5ms
-    
-    section Total
-    Total (worst case) :milestone, 00.065, 0s
 
 
 ### 1.5 Use Case Scenarios
