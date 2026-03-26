@@ -253,7 +253,8 @@ Claude suggested a pseudonym rotation interval of "every 60 seconds" for privacy
 **[Member 1 — Joseph]**
 My primary contribution was defining the overall system architecture. I found AI tools most useful for quickly generating a first draft of the BSM field table and the risk engine pseudocode, which gave us a concrete starting point to critique and improve. The most important lesson was that AI tends to present outputs with false confidence — the BLE latency and spectrum allocation errors could have gone unnoticed without independent verification. In future projects, I would treat AI outputs as a first draft requiring engineering validation rather than a final answer.
 
-**[Member 2 — ]**
+**[Member 2 — Belle]**
+My contribution mainly involved refining several design decisions related to alert triggering conditions, and communication behaviour. AI tools are useful in supporting early idea exploration and technical comparisons, but the suggestions need to be validated to ensure they were realistic for implementation. Through this project, I have gained a better understanding of how engineering decisions must consider safety, usability, and deployment constraints. I also learned the importance of evaluating trade-offs when designing vehicular communication systems that are safety critical. This made me realise the importance of small design choices as they can influence the effectiveness of real-world safety implementations. 
 
 **[Member 3 —]**
 
