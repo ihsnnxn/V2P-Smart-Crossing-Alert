@@ -193,9 +193,9 @@ START
 | **Total** | **~40–65 ms typical, <100 ms worst case** |
 
 
-### 1.5 Use Case Scenario
+### 1.5 Use Case Scenarios
 
-**Scenario: Nighttime crossing at a signalised junction in Choa Chu Kang, Singapore**
+**Scenario 1: Nighttime crossing at a signalised junction in Choa Chu Kang, Singapore**
 
 It is 11:45 PM. Sarah is walking home after her shift. She approaches the junction of Choa Chu Kang Avenue 4 and Choa Chu Kang Street 51. The road is wet, street lighting is partial, and a delivery van is parked near the kerb, blocking the view of the pedestrian crossing from northbound traffic.
 
@@ -204,6 +204,15 @@ As Sarah comes within 40 metres of the crossing node, her smartphone app — run
 A northbound private-hire car, travelling at 45 km/h, is 95 metres away. Its OBU picks up Sarah's BSM within 80 ms. The risk engine computes a TTC of approximately 7.6 seconds — below the 10-second caution threshold — and `intent_flag` is set, so a **CAUTION** alert appears on the driver's head unit: *"Pedestrian ahead — crossing intended."* The driver eases off the accelerator.
 
 By the time the signal turns green for pedestrians and Sarah steps off the kerb, the TTC has dropped to 3.8 seconds, crossing the HIGH alert threshold. The driver has already slowed to 20 km/h and stops well before the crossing. No collision occurs. The interaction lasts under 8 seconds and required no internet connectivity, no RSU, and no action beyond Sarah's normal use of the crossing button.
+
+**Use Case 2: School Zone Dense with Children**
+It is 2:45 PM outside a primary school. A group of children finishes their school day and approaches a marked pedestrian crossing. The area is crowded with school buses and parents' cars, creating visual obstructions for oncoming traffic. Several children are using their smartphones. As they enter the geofence of the crossing, their apps automatically begin broadcasting BSMs with intent_flag = 0x01. A delivery van approaching the crossing at 30 km/h receives multiple simultaneous BSM signals. The vehicle's OBU aggregates these signals, displaying a "Pedestrian Group Ahead — High Caution" alert on the driver's dashboard. The driver slows down preemptively. Even though the children are hidden behind the buses, the driver is fully aware of their presence and stops safely, preventing a potential multi-child accident.
+
+**Use Case 3: Cyclist in a Mixed-Traffic Bike Lane**
+A cyclist is riding along a road with a dedicated but unprotected bike lane, which is partially obstructed by parked cars. The cyclist's smartphone is mounted on the handlebars and running the V2P app in "cyclist mode." As the cyclist approaches an intersection where they need to turn left across a lane of traffic, they activate a turn signal on the app. This sets their intent_flag to "maneuvering." A car in the adjacent lane, traveling at 50 km/h, receives the BSM. The vehicle's OBU calculates the cyclist's path and the high rate of closure. Even though the car's driver hasn't yet seen the cyclist due to the parked cars, the system triggers a "Cyclist Merging" alert. The driver checks their blind spot, slows down, and safely allows the cyclist to merge and complete the turn.
+
+**Use Case 4: Tourist in an Unfamiliar City**
+A tourist is visiting a bustling city center like Orchard Road in Singapore. Distracted by the sights and unfamiliar with local jaywalking laws, they step off the curb without looking, believing they are at a designated crossing. Their smartphone app, running in the background, has been tracking their location. The moment they step into the road, the app's accelerometer detects the sudden change in motion (stepping down from the curb) and combined with the geofence of a nearby crossing, immediately sets a high-priority BSM with a hazard_flag. An approaching taxi, traveling at 25 km/h, receives the signal. The taxi's OBU, recognizing the hazard_flag and close proximity, triggers a "Pedestrian Emergency!" alert with an urgent visual and audio cue. The driver brakes instantly, preventing a collision that might have otherwise occurred due to the driver's own distraction and the tourist's unpredictable behavior.
 
 
 ## 3. AI Usage and Individual Reflection
@@ -256,7 +265,8 @@ My primary contribution was defining the overall system architecture. I found AI
 **[Member 2 — Belle]**
 My contribution mainly involved refining several design decisions related to alert triggering conditions, and communication behaviour. AI tools are useful in supporting early idea exploration and technical comparisons, but the suggestions need to be validated to ensure they were realistic for implementation. Through this project, I have gained a better understanding of how engineering decisions must consider safety, usability, and deployment constraints. I also learned the importance of evaluating trade-offs when designing vehicular communication systems that are safety critical. This made me realise the importance of small design choices as they can influence the effectiveness of real-world safety implementations. 
 
-**[Member 3 —]**
+**[Member 3 —Ihsan]**
+My primary contribution focused on defining the system's behavior in complex, real-world scenarios through the development of diverse use cases. I expanded the project beyond a single pedestrian-vehicle interaction to include scenarios like school zones, cyclists, and tourists. This forced us to think about system robustness, such as handling multiple simultaneous BSMs and integrating accelerometer data to detect sudden pedestrian actions. I found AI tools like Claude helpful for brainstorming scenario variations, but I had to ground them with realistic urban constraints based on my own observations. The key lesson for me was the importance of iterative validation: an AI-suggested scenario might sound plausible, but it must be cross-checked for engineering feasibility (e.g., can a phone's accelerometer reliably detect a curb step?). This process sharpened my understanding of how small, safety-critical features can have a significant impact on a system's effectiveness. I learned that in safety systems, the "edge cases" (like the tourist) are often the most important to design for.
 
 **[Member 4 — ]**
 
