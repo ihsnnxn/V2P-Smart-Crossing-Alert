@@ -188,7 +188,6 @@ START
 | HMI render | ~5 ms |
 | **Total** | **~40–65 ms typical, <100 ms worst case** |
 
-### 1.4 Hardware Components and Parameters
 
 <div align="center">
 
@@ -211,7 +210,6 @@ START
 | **🔄 End-to-End** | BLE path | Total latency | 80-100 ms |
 | | C-V2X path | Total latency | 30-60 ms |
 
-</div>
 
 #### ⏱️ Latency Budget Breakdown (BLE Path)
 
