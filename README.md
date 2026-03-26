@@ -10,31 +10,8 @@
 [![BLE](https://img.shields.io/badge/BLE-5.0+-blue)]()
 [![C-V2X](https://img.shields.io/badge/C--V2X-3GPP%20Release%2014-green)]()
 
-<div align="center">
+<img width="934" height="853" alt="image" src="https://github.com/user-attachments/assets/dedd69fb-6b66-4fc5-a773-4620341aceab" />
 
-+------------------------------------------------------------------+
-|                                                                  |
-|    [CAR] 🚗                                      🚶 [PEDESTRIAN]  |
-|                                                                  |
-|  +-----------+                           +-----------+           |
-|  |           |                           |           |           |
-|  |    OBU    |  <------- BLE/C-V2X ----->|  SMARTPHONE|          |
-|  |  Receiver |  <----------------------> |    App    |           |
-|  |           |      (BSM Payload)        |           |           |
-|  +-----+-----+                           +-----+-----+           |
-|        |                                         |               |
-|        v                                         v               |
-|  +-----------+                           +-----------+           |
-|  |   HMI     |                           |   GPS     |           |
-|  |  Alert    |                           | Geofence  |           |
-|  |  WARNING  |                           |  (50m)    |           |
-|  +-----------+                           +-----------+           |
-|                                                                  |
-|  +------------------------------------------------------------+  |
-|  |  BSM: Lat | Lon | Speed | Heading | Intent=1               |  |
-|  +------------------------------------------------------------+  |
-+------------------------------------------------------------------+
-                     ROADWAY
 
 </div>
 
