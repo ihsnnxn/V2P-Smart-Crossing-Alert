@@ -1,4 +1,4 @@
-# V2P-Smart-Crossing-Alert
+<img width="849" height="641" alt="image" src="https://github.com/user-attachments/assets/84ba33fd-1bd6-4f43-ac3b-880f3c6f663f" /># V2P-Smart-Crossing-Alert
 
 Project Idea
 :
@@ -75,6 +75,9 @@ The system is divided into three subsystems: the **Pedestrian Subsystem** (smart
 │  │   10 Hz broadcast   │    │                   │  │  Dashboard warning   │    │
 │  └─────────────────────┘    │                   │  └──────────────────────┘    │
 └─────────────────────────────┘                   └──────────────────────────────┘
+
+<img width="849" height="641" alt="image" src="https://github.com/user-attachments/assets/19efdaab-a755-4da9-a300-8dc73efcd9e6" />
+
 
 **Key design decisions:**
 - Pedestrian app runs in foreground or background service; triggers geofence check every 1 second via GPS.
