@@ -10,31 +10,39 @@
 [![BLE](https://img.shields.io/badge/BLE-5.0+-blue)]()
 [![C-V2X](https://img.shields.io/badge/C--V2X-3GPP%20Release%2014-green)]()
 
+```
+
+</div>
+```
+
+If the characters aren't aligning properly in GitHub, it might be because of font rendering. Here's an alternative version using simpler box-drawing characters that tend to display more consistently:
+
+
 <div align="center">
 
-┌────────────────────────────────────────────────────────────┐
-│ │
-│ 🚗 CAR 🚶 PEDESTRIAN │
-│ │
-│ ┌───────────┐ ┌───────────┐ │
-│ │ │ │ │ │
-│ │ OBU │ ─────── BLE/C-V2X ──────►│ SMARTPHONE│ │
-│ │ Receiver │ ◄────────────────────── │ App │ │
-│ │ │ (BSM Payload) │ │ │
-│ └─────┬─────┘ └─────┬─────┘ │
-│ │ │ │
-│ ▼ ▼ │
-│ ┌───────────┐ ┌───────────┐ │
-│ │ HMI │ │ GPS │ │
-│ │ Alert │ │ Geofence │ │
-│ │ ⚠️🚶⚠️ │ │ (50m) │ │
-│ └───────────┘ └───────────┘ │
-│ │
-│ ┌────────────────────────────────────────────────────┐ │
-│ │ 📡 BSM: Lat | Lon | Speed | Heading | Intent=1 │ │
-│ └────────────────────────────────────────────────────┘ │
-└────────────────────────────────────────────────────────────┘
-ROADWA
++------------------------------------------------------------------+
+|                                                                  |
+|    [CAR] 🚗                                      🚶 [PEDESTRIAN]  |
+|                                                                  |
+|  +-----------+                           +-----------+           |
+|  |           |                           |           |           |
+|  |    OBU    |  <------- BLE/C-V2X ----->|  SMARTPHONE|          |
+|  |  Receiver |  <----------------------> |    App    |           |
+|  |           |      (BSM Payload)        |           |           |
+|  +-----+-----+                           +-----+-----+           |
+|        |                                         |               |
+|        v                                         v               |
+|  +-----------+                           +-----------+           |
+|  |   HMI     |                           |   GPS     |           |
+|  |  Alert    |                           | Geofence  |           |
+|  |  WARNING  |                           |  (50m)    |           |
+|  +-----------+                           +-----------+           |
+|                                                                  |
+|  +------------------------------------------------------------+  |
+|  |  BSM: Lat | Lon | Speed | Heading | Intent=1               |  |
+|  +------------------------------------------------------------+  |
++------------------------------------------------------------------+
+                     ROADWAY
 
 </div>
 
