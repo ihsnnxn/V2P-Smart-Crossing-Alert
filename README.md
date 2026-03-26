@@ -14,6 +14,18 @@
 
 ---
 
+## 📚 Table of Contents
+
+| Section | Description |
+|:--------|:------------|
+| [🚀 Overview](#-overview) | Project introduction and relevance |
+| [🏗️ System Architecture](#%EF%B8%8F-system-architecture) | Subsystem breakdown and interactions |
+| [⚙️ Functions & Messages](#️-functions--messages) | BSM format, flowcharts, pseudocode |
+| [🖥️ Hardware Parameters](#%EF%B8%8F-hardware-components-and-parameters) | Component specifications and latency |
+| [🎬 Use Cases](#-use-case-scenarios) | Real-world scenario demonstrations |
+| [📝 Decision Log](#-decision-log) | Chronological design evolution |
+| [🤖 AI Usage](#-ai-usage-and-individual-reflection) | Generative AI contributions |
+
 # V2P-Smart-Crossing-Alert
 
 Project Idea
