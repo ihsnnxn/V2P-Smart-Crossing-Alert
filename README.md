@@ -70,6 +70,7 @@ The system is divided into three subsystems: the **Pedestrian Subsystem** (smart
 
 <img width="788" height="636" alt="image" src="https://github.com/user-attachments/assets/671a6a75-8171-4075-a195-4ed56901b3d6" />
 
+
 ### 1.2 System Architecture
 
 <div align="center">
@@ -109,9 +110,9 @@ graph TB
     D --> G
     E --> H
     F --> H
-    G --> H
-
-
+    G --> H 
+   
+```
 
 **Key design decisions:**
 - Pedestrian app runs in foreground or background service; triggers geofence check every 1 second via GPS.
