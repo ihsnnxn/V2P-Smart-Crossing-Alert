@@ -1,3 +1,19 @@
+<div align="center">
+  
+# 🚗🚶‍♂️ **V2P-Smart-Crossing-Alert** 🚶‍♀️🚙
+
+### *"Bridging the Gap Between Pedestrians and Vehicles"*
+
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![GitHub Issues](https://img.shields.io/github/issues/yourusername/V2P-Smart-Crossing-Alert.svg)]()
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
+[![BLE](https://img.shields.io/badge/BLE-5.0+-blue)]()
+[![C-V2X](https://img.shields.io/badge/C--V2X-3GPP%20Release%2014-green)]()
+
+</div>
+
+---
+
 # V2P-Smart-Crossing-Alert
 
 Project Idea
