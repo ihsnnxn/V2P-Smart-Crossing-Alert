@@ -1,4 +1,4 @@
-<img width="849" height="641" alt="image" src="https://github.com/user-attachments/assets/84ba33fd-1bd6-4f43-ac3b-880f3c6f663f" /># V2P-Smart-Crossing-Alert
+# V2P-Smart-Crossing-Alert
 
 Project Idea
 :
