@@ -70,6 +70,47 @@ The system is divided into three subsystems: the **Pedestrian Subsystem** (smart
 
 <img width="788" height="636" alt="image" src="https://github.com/user-attachments/assets/671a6a75-8171-4075-a195-4ed56901b3d6" />
 
+### 1.2 System Architecture
+
+<div align="center">
+
+```mermaid
+graph TB
+    subgraph PEDESTRIAN_SUBSYSTEM [👤 PEDESTRIAN SUBSYSTEM]
+        A[📱 Smartphone App]
+        B[🌍 GPS + Geofence Detector<br/>50m radius]
+        C[📡 BSM Builder<br/>Lat/Lon/Speed/Intent]
+        D[🔵 BLE/C-V2X Transmitter<br/>10 Hz broadcast]
+        
+        A --> B
+        B --> C
+        C --> D
+    end
+    
+    subgraph WIRELESS_CHANNEL [📶 WIRELESS CHANNEL]
+        E[BLE 5.0<br/>~100m | 40-80ms]
+        F[C-V2X PC5<br/>~300m | 20-50ms]
+        G[🔄 Optional RSU Relay]
+    end
+    
+    subgraph VEHICLE_SUBSYSTEM [🚗 VEHICLE SUBSYSTEM]
+        H[📡 OBU Receiver]
+        I[📝 Message Parser]
+        J[⚠️ Risk Engine<br/>TTC = d / v_rel]
+        K[📊 HMI Dashboard Alert<br/>CAUTION | HIGH]
+        
+        H --> I
+        I --> J
+        J --> K
+    end
+    
+    D --> E
+    D --> F
+    D --> G
+    E --> H
+    F --> H
+    G --> H
+
 
 
 **Key design decisions:**
