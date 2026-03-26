@@ -132,6 +132,20 @@ ELSE IF d < 120 m AND bsm.intent_flag == 0x01:
 ELSE:
     noAlert()
 
+ 
+⚠️ Driver Alert System
+
+<div align="center">
+
+| Level | Color | Trigger Condition | Driver Action |
+|:-----:|:-----:|:------------------|:--------------|
+| **HIGH** | 🔴 **RED** | TTC < 4s AND d < 80m | **IMMEDIATE BRAKING** |
+| **CAUTION** | 🟡 **YELLOW** | Intent flag = 1 AND d < 120m | **Prepare to slow** |
+| **INFO** | 🔵 **BLUE** | Pedestrian detected > 120m | **Situational awareness** |
+| **NONE** | ⚪ **GRAY** | No pedestrian threat | Normal driving |
+
+</div>
+
 #### Flowchart (textual representation)
 
 [Pedestrian App]
