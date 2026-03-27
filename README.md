@@ -2,7 +2,9 @@
   
 # 🚗🚶‍♂️ **V2P-Smart-Crossing-Alert** 🚶‍♀️🚙
 
-Geoup 3
+ <div align="center">
+  
+#  **Group 3** 
 
 ### *"Bridging the Gap Between Pedestrians and Vehicles"*
 
