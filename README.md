@@ -320,8 +320,8 @@ My primary contribution focused on defining the system's behavior in complex, re
 **[Member 4 — Daniel Lim]**
 My main contribution to this project was developing and refining the use case scenarios for the proposed V2P system. I worked on expanding the idea beyond a simple one-to-one pedestrian warning case so that the team could evaluate how the system behaves in more realistic situations such as crowded crossings, cyclists, tourists, and visually obstructed roads. This helped the group think more carefully about robustness, edge cases, and how alert logic should adapt to different road users and traffic conditions. I also contributed to discussing how specific inputs, such as intent flags, movement behaviour, and sudden pedestrian actions, could affect the warning mechanism. AI tools were useful in helping me brainstorm different scenario variations quickly, but I learned that those ideas still needed human review to ensure they were practical and technically consistent with the rest of the system. Through this project, I understood that real world engineering design is not only about making a concept work in ideal conditions, but also about checking whether it remains safe in unusual or complex situations. This made me appreciate the importance of scenario based thinking in vehicular communication design. Overall, I contributed by helping the team connect the technical design to realistic user situations and safety needs.
 
-**[Member 5 — ]**
-
+**[Member 5 — Jun Kwang]**
+I designed and ran the dual-smartphone BLE test and built the Python simulation. AI-generated code scaffolding (haversine function, BSM serialiser) saved significant time, but the generated code had the division-by-zero bug in the TTC calculation and used a synchronous BLE polling loop instead of event-driven callbacks. Fixing these required understanding the underlying system, not just accepting AI output. The simulation results confirmed our latency budget estimates to within ±10 ms, giving us confidence in the design without a full hardware prototype.
 
 
 
