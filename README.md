@@ -202,26 +202,6 @@ START
 | **🔄 End-to-End** | BLE path | Total latency | 80-100 ms |
 | | C-V2X path | Total latency | 30-60 ms |
 
-| Component | Specification | Parameter | Value |
-|---|---|---|---|
-| Pedestrian smartphone | Any BLE 5.0+ / 5G handset (e.g., iPhone 14, Samsung S22) | GPS accuracy | ±3–5 m (good sky view) |
-| BLE radio | BLE 5.0, advertising mode | Max TX power | +20 dBm |
-| BLE radio | BLE 5.0 | Effective range | ~100 m (open road) |
-| BLE radio | BLE 5.0 | Data rate | 1 Mbps (adv. channel) |
-| BLE radio | BLE 5.0 | Latency (adv. → receive) | ~40–80 ms |
-| C-V2X module | Qualcomm 9150 C-V2X or equivalent | Frequency | 5.9 GHz (PC5 sidelink) |
-| C-V2X module | Qualcomm 9150 | Effective range | ~300 m |
-| C-V2X module | Qualcomm 9150 | Latency (PC5 D2D) | ~20–50 ms |
-| C-V2X module | Qualcomm 9150 | Bandwidth | 10 MHz channel |
-| Vehicle OBU | Aftermarket BLE/C-V2X gateway | Processing latency | ~5–10 ms |
-| Vehicle OBU | — | Update rate accepted | up to 10 Hz |
-| HMI display | Vehicle head unit / aftermarket tablet | Alert display time | ≤ 500 ms post-receive |
-| GPS (pedestrian) | Integrated chipset | Update rate | 1 Hz standard, 10 Hz fast mode |
-| BSM payload | — | Packet size | 23 bytes |
-| System end-to-end | BLE path | Total latency | ~80–100 ms |
-| System end-to-end | C-V2X path | Total latency | ~30–60 ms |
-| Battery impact | App background service | Estimated drain | ~3–5% per hour additional |
-
 **Latency budget breakdown (BLE path):**
 
 | Stage | Duration |
